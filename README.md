@@ -1,6 +1,6 @@
 <div align="center">
   <picture>
-      <img src="figures/kimi-logo.png" width="30%" alt="Kimi K2: Open Agentic Intellignece">
+      <img src="figures/kimi-logo.png" width="30%" alt="Kimi K2: Open Agentic Intelligence">
   </picture>
 </div>
 
@@ -22,7 +22,7 @@
 </div>
 
 <p align="center">
-<b>📰&nbsp;&nbsp;<a href="https://moonshotai.github.io/Kimi-K2/">Tech Blog</a></b> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>📄&nbsp;&nbsp;Paper Link (comming soon)</b>
+<b>📰&nbsp;&nbsp;<a href="https://moonshotai.github.io/Kimi-K2/">Tech Blog</a></b> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>📄&nbsp;&nbsp;Paper Link (coming soon)</b>
 </p>
 
 ## 1. Model Introduction
