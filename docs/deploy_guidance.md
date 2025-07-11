@@ -65,7 +65,7 @@ python -m sglang.launch_server --model-path $MODEL_PATH --tp 16 --dist-init-addr
 
 ### Data Parallelism + Expert Parallelism
 
-Here is an example for large scale Prefill-Decode Disagreegation (4P12D H200) with DP+EP in SGLang:
+Here is an example for large scale Prefill-Decode Disaggregation (4P12D H200) with DP+EP in SGLang:
 
 ``` bash
 # for prefill node
