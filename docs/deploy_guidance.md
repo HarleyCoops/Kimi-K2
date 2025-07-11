@@ -1,7 +1,7 @@
 # Kimi-K2 Deployment Guide
 
 > [!Note]
-> This guide only provides some examples of deployment commands for Kimi-K2, which may not be the optimal configuration. Since inference engines are still being updated frequenty,  please continue to follow the guidance from their homepage if you want to achieve better inference performance.
+> This guide only provides some examples of deployment commands for Kimi-K2, which may not be the optimal configuration. Since inference engines are still being updated frequently,  please continue to follow the guidance from their homepage if you want to achieve better inference performance.
 
 
 ## vLLM Deployment
@@ -95,7 +95,7 @@ To enable AMX optimization, run:
 python ktransformers/server/main.py  --model_path /path/to/K2 --gguf_path /path/to/K2 --cache_lens 30000 --optimize_config_path ktransformers/optimize/optimize_rules/DeepSeek-V3-Chat-fp8-linear-ggml-experts-serve-amx.yaml
 ```
 
-## TensoRT-LLM Deployment
+## TensorRT-LLM Deployment
 ### Prerequisite
 Please refer to [this guide](https://nvidia.github.io/TensorRT-LLM/installation/build-from-source-linux.html) to build TensorRT-LLM v1.0.0-rc2 from source and start a TRT-LLM docker container. 
 
