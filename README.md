@@ -25,13 +25,6 @@
 <b>📰&nbsp;&nbsp;<a href="https://moonshotai.github.io/Kimi-K2/">Tech Blog</a></b> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>📄&nbsp;&nbsp;Paper Link (comming soon)</b>
 </p>
 
-
-<div align="center">
-  <picture>
-      <img src="figures/banner.png" width="80%" alt="Evaluation Results">
-  </picture>
-</div>
-
 ## 1. Model Introduction
 
 Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 billion activated parameters and 1 trillion total parameters. Trained with the Muon optimizer, Kimi K2 achieves exceptional performance across frontier knowledge, reasoning, and coding tasks while being meticulously optimized for agentic capabilities.
@@ -45,6 +38,11 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 - **Kimi-K2-Base**: The foundation model, a strong start for researchers and builders who want full control for fine-tuning and custom solutions.
 - **Kimi-K2-Instruct**: The post-trained model best for drop-in, general-purpose chat and agentic experiences. It is a reflex-grade model without long thinking.
 
+<div align="center">
+  <picture>
+      <img src="figures/banner.png" width="80%" alt="Evaluation Results">
+  </picture>
+</div>
 
 ## 2. Model Summary
 
@@ -497,26 +495,150 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 
 <div align="center">
 
-| Benchmark         | Metric   | Shot    | Kimi K2 Base | Deepseek-V3-Base | Qwen2.5-72B | Llama 4 Maverick |
-|:-------------------:|:----------:|:---------:|:--------------:|:------------------:|:-------------:|:------------------:|
-| **General Tasks** |          |         |              |                  |             |                  |
-| MMLU              | EM       | 5-shot  | **87.8**    | 87.1             | 86.1       | 84.9            |
-| MMLU-pro          | EM       | 5-shot  | **69.2**    | 60.6            | 62.8        | 63.5            |
-| MMLU-redux-2.0    | EM       | 5-shot  | **90.2**    | 89.5            | 87.8       | 88.2            |
-| SimpleQA          | Correct  | 5-shot  | **35.3**    | 26.5            | 10.3       | 23.7            |
-| TriviaQA          | EM       | 5-shot  | **85.1**    | 84.1            | 76.0       | 79.3            |
-| GPQA-Diamond      | Avg@8    | 5-shot  | 48.1        | **50.5**        | 40.8       | 49.4            |
-| SuperGPQA         | EM       | 5-shot  | **44.7**    | 39.2             | 34.2       | 38.8            |
-| **Code Tasks**    |          |         |              |                  |             |                  |
-| LiveCodeBench v6  | Pass@1   | 1-shot  | **26.3**    | 22.9            | 21.1       | 25.1            |
-| EvalPlus          | Pass@1   | -       | **80.3**    | 65.6            | 66.0       | 65.5            |
-| **Mathematics Tasks** |      |         |              |                  |             |                  |
-| MATH              | EM       | 4-shot  | **70.2**    | 60.1            | 61.0       | 63.0            |
-| GSM8k             | EM       | 8-shot  | **92.1**    | 91.7            | 90.4       | 86.3            |
-| **Chinese Tasks** |          |         |              |                  |             |                  |
-| C-Eval            | EM       | 5-shot  | **92.5**     | 90.0            | 90.9       | 80.9            |
-| CSimpleQA         | Correct  | 5-shot  | **77.6**    | 72.1            | 50.5       | 53.5            |
-
+<table>
+<thead>
+<tr>
+<th align="center">Benchmark</th>
+<th align="center">Metric</th>
+<th align="center">Shot</th>
+<th align="center">Kimi K2 Base</th>
+<th align="center">Deepseek-V3-Base</th>
+<th align="center">Qwen2.5-72B</th>
+<th align="center">Llama 4 Maverick</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" colspan="7"><strong>General Tasks</strong></td>
+</tr>
+<tr>
+<td align="center">MMLU</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>87.8</strong></td>
+<td align="center">87.1</td>
+<td align="center">86.1</td>
+<td align="center">84.9</td>
+</tr>
+<tr>
+<td align="center">MMLU-pro</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>69.2</strong></td>
+<td align="center">60.6</td>
+<td align="center">62.8</td>
+<td align="center">63.5</td>
+</tr>
+<tr>
+<td align="center">MMLU-redux-2.0</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>90.2</strong></td>
+<td align="center">89.5</td>
+<td align="center">87.8</td>
+<td align="center">88.2</td>
+</tr>
+<tr>
+<td align="center">SimpleQA</td>
+<td align="center">Correct</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>35.3</strong></td>
+<td align="center">26.5</td>
+<td align="center">10.3</td>
+<td align="center">23.7</td>
+</tr>
+<tr>
+<td align="center">TriviaQA</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>85.1</strong></td>
+<td align="center">84.1</td>
+<td align="center">76.0</td>
+<td align="center">79.3</td>
+</tr>
+<tr>
+<td align="center">GPQA-Diamond</td>
+<td align="center">Avg@8</td>
+<td align="center">5-shot</td>
+<td align="center">48.1</td>
+<td align="center"><strong>50.5</strong></td>
+<td align="center">40.8</td>
+<td align="center">49.4</td>
+</tr>
+<tr>
+<td align="center">SuperGPQA</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>44.7</strong></td>
+<td align="center">39.2</td>
+<td align="center">34.2</td>
+<td align="center">38.8</td>
+</tr>
+<tr>
+<td align="center" colspan="7"><strong>Coding Tasks</strong></td>
+</tr>
+<tr>
+<td align="center">LiveCodeBench v6</td>
+<td align="center">Pass@1</td>
+<td align="center">1-shot</td>
+<td align="center"><strong>26.3</strong></td>
+<td align="center">22.9</td>
+<td align="center">21.1</td>
+<td align="center">25.1</td>
+</tr>
+<tr>
+<td align="center">EvalPlus</td>
+<td align="center">Pass@1</td>
+<td align="center">-</td>
+<td align="center"><strong>80.3</strong></td>
+<td align="center">65.6</td>
+<td align="center">66.0</td>
+<td align="center">65.5</td>
+</tr>
+<tr>
+<td align="center" colspan="7"><strong>Mathematics Tasks</strong></td>
+</tr>
+<tr>
+<td align="center">MATH</td>
+<td align="center">EM</td>
+<td align="center">4-shot</td>
+<td align="center"><strong>70.2</strong></td>
+<td align="center">60.1</td>
+<td align="center">61.0</td>
+<td align="center">63.0</td>
+</tr>
+<tr>
+<td align="center">GSM8k</td>
+<td align="center">EM</td>
+<td align="center">8-shot</td>
+<td align="center"><strong>92.1</strong></td>
+<td align="center">91.7</td>
+<td align="center">90.4</td>
+<td align="center">86.3</td>
+</tr>
+<tr>
+<td align="center" colspan="7"><strong>Chinese Tasks</strong></td>
+</tr>
+<tr>
+<td align="center">C-Eval</td>
+<td align="center">EM</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>92.5</strong></td>
+<td align="center">90.0</td>
+<td align="center">90.9</td>
+<td align="center">80.9</td>
+</tr>
+<tr>
+<td align="center">CSimpleQA</td>
+<td align="center">Correct</td>
+<td align="center">5-shot</td>
+<td align="center"><strong>77.6</strong></td>
+<td align="center">72.1</td>
+<td align="center">50.5</td>
+<td align="center">53.5</td>
+</tr>
+</tbody>
+</table>
 </div>
 <sup>
 • We only evaluate open-source pretrained models in this work. We report results for Qwen2.5-72B because the base checkpoint for Qwen3-235B-A22B was not open-sourced at the time of our study.
