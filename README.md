@@ -130,7 +130,7 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 
 <tr>
 <td align="center">SWE-bench Verified <br/><sup>(Agentless Coding)</sup></td>
-<td align="center">Single Patch</td>
+<td align="center">Single Patch w/o Test (Acc)</td>
 <td align="center"><ins><strong>51.8</strong></ins></td>
 <td align="center">36.6</td>
 <td align="center">39.4</td>
@@ -190,7 +190,7 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 
 <tr>
 <!--<td align="center">TerminalBench</td>-->
-<td align="center">Acc</td>
+<td align="center">Terminus (Acc)</td>
 <td align="center"><ins><strong>25.0</strong> </ins></td>
 <td align="center">16.3</td>
 <td align="center">6.6</td>
