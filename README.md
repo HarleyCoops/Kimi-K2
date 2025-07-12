@@ -52,8 +52,8 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 | | |
 |:---:|:---:|
 | **Architecture** | Mixture-of-Experts (MoE) |
-| **Total Parameters** | 1T |
-| **Activated Parameters** | 32B |
+| **Total Parameters** | $1 \times 10^{12}$ (1T) |
+| **Activated Parameters** | $32 \times 10^9$ (32B) |
 | **Number of Layers** (Dense layer included) | 61 |
 | **Number of Dense Layers** | 1 |
 | **Attention Hidden Dimension** | 7168 |
@@ -62,8 +62,8 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 | **Number of Experts** | 384 |
 | **Selected Experts per Token** | 8 |
 | **Number of Shared Experts** | 1 |
-| **Vocabulary Size** | 160K |
-| **Context Length** | 128K |
+| **Vocabulary Size** | $160 \times 10^3$ (160K) |
+| **Context Length** | $128 \times 10^3$ (128K) tokens |
 | **Attention Mechanism** | MLA |
 | **Activation Function** | SwiGLU |
 </div>
@@ -75,20 +75,25 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 The [Muon optimizer](https://github.com/KellerJordan/Muon) represents a fundamental shift from traditional optimization approaches. Unlike AdamW or SGD that treat neural network parameters as vectors, **Muon exploits the matrix structure** of weight parameters, using geometry-aware updates and spectral norm constraints.
 
 **Core Mathematical Innovation:**
-```
-W ← W - η × √(fan-out/fan-in) × NewtonSchulz(∇W L)
-```
 
-Where `NewtonSchulz()` performs orthogonalization using Newton-Schulz iteration, providing second-order-like benefits with minimal computational overhead (<1%).
+$$W \leftarrow W - \eta \times \sqrt{\frac{\text{fan-out}}{\text{fan-in}}} \times \text{NewtonSchulz}(\nabla_W L)$$
+
+Where $\text{NewtonSchulz}()$ performs orthogonalization using Newton-Schulz iteration:
+
+$$\text{NewtonSchulz}(G) = \text{orthogonalize}(G) \text{ via iterative refinement}$$
+
+$$X_{k+1} = aX_k + B_k X_k \text{ where } B_k = bA_k + cA_k^2, \; A_k = X_k X_k^T$$
+
+This provides second-order-like benefits with minimal computational overhead (<1%).
 
 ### MuonClip: Scaling to Trillion Parameters
 
 Kimi K2 represents the **first successful training of a trillion-parameter model** using the Muon optimizer family. Our **MuonClip** variant introduces critical innovations:
 
 **Key Achievements:**
-- **1T Parameter Scale**: Successfully trained the largest Muon-optimized model to date
-- **15.5T Token Training**: Completed full training with zero instability incidents
-- **2× Efficiency**: Achieved ~2× computational efficiency compared to AdamW at scale
+- **$10^{12}$ Parameter Scale**: Successfully trained the largest Muon-optimized model to date
+- **$15.5 \times 10^{12}$ Token Training**: Completed full training with zero instability incidents  
+- **$2\times$ Efficiency**: Achieved $\sim2\times$ computational efficiency compared to AdamW at scale
 - **Perfect Stability**: Zero training instabilities throughout the entire process
 
 ### Technical Breakthroughs in MuonClip
@@ -122,7 +127,6 @@ This work builds on recent breakthroughs in optimizer research:
 - **Theoretical Foundation**: Matrix optimization theory applied to neural networks
 
 > **Technical Details**: Full mathematical formulations and training procedures will be detailed in our upcoming research paper. MuonClip represents months of research into optimizer theory and distributed training at unprecedented scales.
-
 
 ## 4. Tool Calling Capabilities
 

@@ -65,3 +65,11 @@ The model supports deployment on:
 - TensorRT-LLM (multi-node inference)
 
 Note: The model reuses DeepSeekV3CausalLM architecture but uses `"model_type": "kimi_k2"` in config.json for proper optimization.
+
+## Mathematical Notation
+
+The repository uses LaTeX/KaTeX mathematical notation in documentation:
+- Inline math: `$x = y$` renders as $x = y$
+- Display math: `$$W \leftarrow W - \eta \nabla W$$` renders as centered equation
+- GitHub now supports mathematical rendering natively in markdown files
+- Use proper mathematical symbols: $\times$, $\leftarrow$, $\nabla$, $\sqrt{}$, etc.
