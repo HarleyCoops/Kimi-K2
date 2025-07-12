@@ -15,7 +15,7 @@ load_dotenv()
 
 # Configuration
 API_BASE_URL = "https://api.moonshot.ai/v1"
-MODEL_NAME = "moonshotai/Kimi-K2-Instruct"
+MODEL_NAME = "kimi-k2-0711-preview"
 API_KEY = os.getenv("MOONSHOT_API_KEY")
 
 if not API_KEY:
@@ -115,4 +115,4 @@ def test_kimi_k2_with_tools():
     print("✅ Test completed!")
 
 if __name__ == "__main__":
-    test_kimi_k2_with_tools() 
+    test_kimi_k2_with_tools()

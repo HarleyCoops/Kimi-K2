@@ -71,7 +71,7 @@ def test_api_key(api_key):
         
         # Simple test call
         response = client.chat.completions.create(
-            model="moonshotai/Kimi-K2-Instruct",
+            model="moonshotai/kimi-k2-0711-preview",
             messages=[{"role": "user", "content": "Hello"}],
             max_tokens=10
         )
