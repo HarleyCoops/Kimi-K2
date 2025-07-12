@@ -38,11 +38,7 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 - **Kimi-K2-Base**: The foundation model, a strong start for researchers and builders who want full control for fine-tuning and custom solutions.
 - **Kimi-K2-Instruct**: The post-trained model best for drop-in, general-purpose chat and agentic experiences. It is a reflex-grade model without long thinking.
 
-<div align="center">
-  <picture>
-      <img src="figures/banner.png" width="80%" alt="Evaluation Results">
-  </picture>
-</div>
+
 
 ## 2. Model Summary
 
