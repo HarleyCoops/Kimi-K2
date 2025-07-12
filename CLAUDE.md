@@ -47,8 +47,15 @@ This repository implements a client library for the Kimi-K2 language model API. 
 1. Define tools using OpenAI function schema format
 2. Pass tools array to chat completion request
 3. Check `finish_reason` for "tool_calls"
-4. Execute tools and append results with `role="tool"`
-5. Continue conversation until completion
+4. **IMPORTANT**: Append assistant message to messages list before processing tool calls
+5. Execute tools using `tool_function(**tool_call_arguments)` (unpack arguments)
+6. Append tool results with `role="tool"`
+7. Continue conversation until completion
+
+### Critical Implementation Notes
+- **Function Calling Pattern**: Use `tool_function(**tool_call_arguments)` to unpack the arguments dictionary
+- **Streaming Mode**: Must append assistant message with tool calls to messages list before processing
+- **Official Guidance Bug**: The documentation shows `tool_function(tool_call_arguments)` but this is incorrect for functions with individual parameters
 
 ### Deployment Considerations
 The model supports deployment on:

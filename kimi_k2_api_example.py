@@ -219,6 +219,21 @@ def chat_with_tools_streaming(user_message, temperature=0.3):
                 finish_reason = chunk.choices[0].finish_reason
             
             if finish_reason == "tool_calls":
+                # Append the assistant message with tool calls to messages list
+                assistant_message = {
+                    "role": "assistant",
+                    "content": msg if msg else None,
+                    "tool_calls": [{
+                        "id": tc["id"],
+                        "type": "function",
+                        "function": {
+                            "name": tc["function"]["name"],
+                            "arguments": tc["function"]["arguments"]
+                        }
+                    } for tc in tool_calls]
+                }
+                messages.append(assistant_message)
+                
                 print("\n🔧 Tool calls detected:")
                 for tool_call in tool_calls:
                     tool_call_name = tool_call['function']['name']
