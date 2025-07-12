@@ -329,14 +329,3 @@ The `tool_call_with_client` function implements the pipeline from user query to 
 This pipeline requires the inference engine to support Kimi-K2’s native tool-parsing logic.
 For streaming output and manual tool-parsing, see the [Tool Calling Guide](docs/tool_call_guidance.md).
 
----
-
-## 7. License
-
-Both the code repository and the model weights are released under the [Modified MIT License](LICENSE).
-
----
-
-## 8. Contact Us
-
-If you have any questions, please reach out at [support@moonshot.cn](mailto:support@moonshot.cn).
