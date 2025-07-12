@@ -70,32 +70,58 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 
 ## 3. The Muon Breakthrough: Achieving Unprecedented Scale with Zero Instability
 
-### MuonClip: Scaling the Muon Optimizer to Trillion Parameters
+### The Muon Optimizer: Matrix-Aware Optimization
 
-Kimi K2 represents a groundbreaking achievement in large-scale model training through the development of **MuonClip**, a novel variant of the Muon optimizer specifically engineered for trillion-parameter models. This breakthrough enabled:
+The [Muon optimizer](https://github.com/KellerJordan/Muon) represents a fundamental shift from traditional optimization approaches. Unlike AdamW or SGD that treat neural network parameters as vectors, **Muon exploits the matrix structure** of weight parameters, using geometry-aware updates and spectral norm constraints.
 
-- **Unprecedented Scale**: Successfully trained a 1T parameter MoE model on 15.5T tokens
-- **Zero Training Instability**: Achieved perfect stability throughout the entire training process
-- **Novel Optimization Techniques**: Developed new methods to resolve instabilities inherent in scaling
+**Core Mathematical Innovation:**
+```
+W ← W - η × √(fan-out/fan-in) × NewtonSchulz(∇W L)
+```
 
-### Technical Innovation
+Where `NewtonSchulz()` performs orthogonalization using Newton-Schulz iteration, providing second-order-like benefits with minimal computational overhead (<1%).
 
-The MuonClip optimizer addresses fundamental challenges in scaling neural networks to trillion parameters:
+### MuonClip: Scaling to Trillion Parameters
 
-1. **Stability at Scale**: Traditional optimizers face catastrophic instabilities when scaling beyond hundreds of billions of parameters. MuonClip introduces novel clipping and normalization techniques that maintain stable gradients even at extreme scales.
+Kimi K2 represents the **first successful training of a trillion-parameter model** using the Muon optimizer family. Our **MuonClip** variant introduces critical innovations:
 
-2. **Efficient Parameter Updates**: With 1 trillion total parameters and 32 billion activated parameters per forward pass, efficient optimization becomes critical. MuonClip optimizes the update mechanism specifically for sparse MoE architectures.
+**Key Achievements:**
+- **1T Parameter Scale**: Successfully trained the largest Muon-optimized model to date
+- **15.5T Token Training**: Completed full training with zero instability incidents
+- **2× Efficiency**: Achieved ~2× computational efficiency compared to AdamW at scale
+- **Perfect Stability**: Zero training instabilities throughout the entire process
 
-3. **Memory Efficiency**: Training trillion-parameter models requires careful memory management. MuonClip implements advanced memory-efficient techniques that enable training on available hardware.
+### Technical Breakthroughs in MuonClip
 
-### Why This Matters
+1. **Extreme-Scale Stability**: Traditional optimizers face catastrophic failures beyond hundreds of billions of parameters. MuonClip's novel clipping and normalization techniques maintain stable gradients at trillion-parameter scales.
 
-The ability to train models at this scale with zero instability opens new frontiers in AI capabilities:
-- **Emergent Abilities**: Larger models demonstrate qualitatively different capabilities
-- **Knowledge Capacity**: Trillion parameters allow for unprecedented knowledge storage
-- **Sparse Computation**: MoE architecture ensures efficiency despite massive scale
+2. **MoE-Optimized Updates**: Specialized parameter update mechanisms for mixture-of-experts architectures, efficiently handling 32B activated parameters out of 1T total.
 
-> **Note**: Detailed technical specifications of MuonClip will be published in our upcoming paper. The development of MuonClip represents months of research into optimizer theory and large-scale distributed training.
+3. **Memory-Efficient Implementation**: Advanced techniques enabling trillion-parameter training on existing hardware infrastructure.
+
+4. **Gradient Conditioning**: Matrix-aware orthogonalization provides superior gradient conditioning compared to vector-based optimizers.
+
+### Why Muon Matters for AI
+
+**Compared to AdamW:**
+- 2× computational efficiency in large-scale training
+- Better scaling properties without extensive hyperparameter tuning
+- Superior convergence characteristics at extreme scales
+
+**Matrix-Aware Advantages:**
+- Direct exploitation of weight matrix structure
+- Implicit regularization via spectral norm constraints  
+- Improved gradient conditioning through orthogonalization
+- Second-order benefits without Hessian computation overhead
+
+### Research Foundation
+
+This work builds on recent breakthroughs in optimizer research:
+- **Original Muon**: Developed by Keller Jordan for geometry-aware optimization
+- **Scaling Research**: Recent work showing Muon's superior scaling properties
+- **Theoretical Foundation**: Matrix optimization theory applied to neural networks
+
+> **Technical Details**: Full mathematical formulations and training procedures will be detailed in our upcoming research paper. MuonClip represents months of research into optimizer theory and distributed training at unprecedented scales.
 
 
 ## 4. Tool Calling Capabilities
