@@ -38,7 +38,40 @@ Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 bi
 - **Kimi-K2-Base**: The foundation model, a strong start for researchers and builders who want full control for fine-tuning and custom solutions.
 - **Kimi-K2-Instruct**: The post-trained model best for drop-in, general-purpose chat and agentic experiences. It is a reflex-grade model without long thinking.
 
+### Quick Start
 
+Get started with Kimi-K2 in just a few commands using our custom setup tools:
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Set up your API key (professional setup utility)
+python3 setup_api_key.py
+
+# 3. Run a quick test
+python3 quick_test.py
+
+# 4. Explore comprehensive examples
+python3 kimi_k2_api_example.py
+
+# 5. Test tool capabilities and MCP integration
+python3 explore_tools.py
+```
+
+### Custom Tools We've Built
+
+This repository includes several professionally crafted utilities:
+
+| Tool | Purpose | Features |
+|------|---------|----------|
+| **`setup_api_key.py`** | Professional API key configuration | • PhD-level academic presentation<br>• Secure credential handling<br>• API key validation<br>• Cross-platform support |
+| **`quick_test.py`** | Rapid functionality verification | • Basic tool calling test<br>• Calculator function demo<br>• Error handling validation |
+| **`kimi_k2_api_example.py`** | Comprehensive implementation guide | • Non-streaming & streaming modes<br>• Multiple tool examples<br>• Production-ready patterns |
+| **`explore_tools.py`** | Advanced tool capability testing | • Custom tool creation patterns<br>• MCP integration examples<br>• Tool chaining demonstrations<br>• System command interfaces |
+| **`validate_tool_calling.py`** | Implementation validation | • Official guidance compliance<br>• Function signature testing<br>• Bug detection and reporting |
+
+These tools demonstrate best practices for Kimi-K2 integration and provide production-ready starting points for your own implementations.
 
 ## 2. Model Summary
 
@@ -196,16 +229,30 @@ This enables Kimi K2 to:
 
 ### Tool Exploration
 
-To explore tool capabilities, use the provided script:
+Explore advanced tool capabilities with our comprehensive testing suite:
+
 ```bash
-python explore_tools.py
+# Comprehensive tool capability exploration
+python3 explore_tools.py
+
+# Validate implementations against official guidance
+python3 validate_tool_calling.py
+
+# Quick functionality test
+python3 quick_test.py
 ```
 
-This demonstrates:
-- Custom tool creation patterns
-- Tool chaining capabilities
-- MCP integration possibilities
-- Advanced agentic workflows
+**`explore_tools.py`** demonstrates:
+- Custom tool creation patterns for system commands, file operations, and API requests
+- Tool chaining capabilities and multi-step workflows
+- MCP (Model Context Protocol) integration possibilities
+- Advanced agentic workflow patterns
+
+**`validate_tool_calling.py`** provides:
+- Compliance testing against official documentation
+- Function signature compatibility validation
+- Bug detection in implementation patterns
+- Comprehensive error analysis and reporting
 
 ## 5. Deployment
 > [!Note]
